@@ -4,3 +4,6 @@
 [submodule "static/static"]
 	path = static/static
 	url = git@github.com:aarmea/AlbertArmea.com-static.git
+[submodule "public"]
+	path = public
+	url = git@github.com:aarmea/aarmea.github.io.git
