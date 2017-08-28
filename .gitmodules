@@ -1,3 +1,6 @@
 [submodule "themes/hugo-theme-minos"]
 	path = themes/hugo-theme-minos
 	url = https://github.com/carsonip/hugo-theme-minos.git
+[submodule "static/static"]
+	path = static/static
+	url = git@github.com:aarmea/AlbertArmea.com-static.git
