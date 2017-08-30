@@ -2,3 +2,8 @@ baseURL = "https://aarmea.github.io/"
 languageCode = "en-us"
 title = "Albert Armea"
 theme = "hugo-theme-minos"
+
+[[menu.main]]
+  name = "GitHub"
+  identifier = "github"
+  url = "https://github.com/aarmea"
