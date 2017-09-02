@@ -4,6 +4,11 @@ title = "Albert Armea"
 theme = "hugo-theme-minos"
 
 [[menu.main]]
+  name = "About"
+  identifier = "about"
+  url = "/page/about"
+
+[[menu.main]]
   name = "GitHub"
   identifier = "github"
   url = "https://github.com/aarmea"
