@@ -37,4 +37,7 @@ license](https://choosealicense.com/licenses/cc-by-4.0/). Code snippets on this
 site are also made available under the [MIT
 license](https://choosealicense.com/licenses/mit/).
 
+Links on this site to Amazon.com are affiliate links. I will receive a portion
+of the proceeds if a purchase is made via these links.
+
 The views expressed here are my own and not my employer's.
