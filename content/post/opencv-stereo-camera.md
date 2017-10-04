@@ -264,7 +264,7 @@ if (len(filenames) > MAX_IMAGES):
 ```
 
 Then, calibrating succeeded but the supposedly "undistorted" result ended up
-more distoted than the original:
+worse than the original:
 
 ![Poor calibration results - the image wraps around itself][calibrated-poor]
 
