@@ -63,24 +63,26 @@ for content. Hugo will populate `{{ block "main" . }}` with the page's content
 when the site is generated, and our JavaScript will change `#mainContent` as the
 user clicks on links.
 
-    <!DOCTYPE html>
-    <html lang="{{ .Site.LanguageCode }}">
-      <head>
-        {{ .Hugo.Generator }}
-        <meta charset="utf-8">
-        <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-      </head>
-      <body>
-        <header>
-          <h1><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
-        </header>
-        <main id="mainContent">{{ block "main" . }}{{ end }}</main>
-        <footer>
-          <a href="https://github.com/aarmea/mfw-singlepage">mfw-singlepage</a>
-          theme for <a href="https://gohugo.io">Hugo</a>
-        </footer>
-      </body>
-    </html>
+```html
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ .Hugo.Generator }}
+    <meta charset="utf-8">
+    <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+    </header>
+    <main id="mainContent">{{ block "main" . }}{{ end }}</main>
+    <footer>
+      <a href="https://github.com/aarmea/mfw-singlepage">mfw-singlepage</a>
+      theme for <a href="https://gohugo.io">Hugo</a>
+    </footer>
+  </body>
+</html>
+```
 
 The `<header>` and `<footer>` should probably be split out into their own
 [partial templates](https://gohugo.io/templates/partials/) so that you can
@@ -110,29 +112,31 @@ retrieve and display the content, and update the back stack and displayed URL.
 The easiest way to do this is to register a click handler on the `<body>` and do
 nothing if the click event was not on a link:
 
-    window.onload = function() {
-      // Make links load asynchronously
-      document.body.addEventListener("click", function(event) {
-        if (event.target.tagName !== "A")
-          return;
+```javascript
+window.onload = function() {
+  // Make links load asynchronously
+  document.body.addEventListener("click", function(event) {
+    if (event.target.tagName !== "A")
+      return;
 
-        // History API needed to make sure back and forward still work
-        if (history === null)
-          return;
+    // History API needed to make sure back and forward still work
+    if (history === null)
+      return;
 
-        event.preventDefault();
+    event.preventDefault();
 
-        // External links should instead open in a new tab
-        var newUrl = event.target.href;
-        var domain = window.location.origin;
-        if (typeof domain !== "string" || newUrl.search(domain) !== 0) {
-          window.open(newUrl, "_blank");
-        } else {
-          loadPage(newUrl);
-          history.pushState(null /*stateObj*/, "" /*title*/, newUrl);
-        }
-      });
+    // External links should instead open in a new tab
+    var newUrl = event.target.href;
+    var domain = window.location.origin;
+    if (typeof domain !== "string" || newUrl.search(domain) !== 0) {
+      window.open(newUrl, "_blank");
+    } else {
+      loadPage(newUrl);
+      history.pushState(null /*stateObj*/, "" /*title*/, newUrl);
     }
+  });
+}
+```
 
 Setting up this behavior this way, as opposed to adding the click handler to
 every `<a>` individually, means that I won't have to register more handlers
@@ -155,30 +159,32 @@ onclick="...">`.
 isn't exactly a one-liner like [jQuery's
 `get()`](https://api.jquery.com/jQuery.get/), but it's not too far off:
 
-    function loadPage(newUrl) {
-      var httpRequest = new XMLHttpRequest();
-      httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState !== XMLHttpRequest.DONE)
-          return;
+```javascript
+function loadPage(newUrl) {
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function() {
+    if (httpRequest.readyState !== XMLHttpRequest.DONE)
+      return;
 
-        var newDocument = httpRequest.responseXML;
-        if (newDocument === null)
-          return;
+    var newDocument = httpRequest.responseXML;
+    if (newDocument === null)
+      return;
 
-        var newContent = httpRequest.responseXML.getElementById("mainContent");
-        if (newContent === null)
-          return;
+    var newContent = httpRequest.responseXML.getElementById("mainContent");
+    if (newContent === null)
+      return;
 
-        document.title = newDocument.title;
+    document.title = newDocument.title;
 
-        var contentElement = document.getElementById("mainContent");
-        contentElement.replaceWith(newContent);
-      }
+    var contentElement = document.getElementById("mainContent");
+    contentElement.replaceWith(newContent);
+  }
 
-      httpRequest.responseType = "document";
-      httpRequest.open("GET", newUrl);
-      httpRequest.send();
-    };
+  httpRequest.responseType = "document";
+  httpRequest.open("GET", newUrl);
+  httpRequest.send();
+};
+```
 
 `XMLHttpRequest` is capable of parsing the response as HTML. To do this, set its
 `responseType` to `"document"` before sending the request and wait for
@@ -206,21 +212,27 @@ work in a single page site.
 First, check if the history API is available. I did this check in the click
 handler before overriding its behavior:
 
-    // History API needed to make sure back and forward still work
-    if (history === null)
-      return;
+```javascript
+// History API needed to make sure back and forward still work
+if (history === null)
+  return;
+```
 
 Further down, the click handler also calls `pushState` after displaying the new
 page to add it to the history and change the shown URL:
 
-    history.pushState(null /*stateObj*/, "" /*title*/, newUrl);
+```javascript
+history.pushState(null /*stateObj*/, "" /*title*/, newUrl);
+```
 
 Finally, the `onpopstate` handler is called when the back button is clicked.
 When this happens, the page needs to reload the content from that URL.
 
-    window.onpopstate = function(event) {
-      loadPage(window.location);
-    }
+```javascript
+window.onpopstate = function(event) {
+  loadPage(window.location);
+}
+```
 
 I could probably save bandwidth that will be wasted when the same page is loaded
 more than once by caching the content.
