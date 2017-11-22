@@ -12,6 +12,8 @@ You can also find me on:
 * [GitHub](https://github.com/aarmea/)
 * [YouTube](https://www.youtube.com/channel/UCnhhM5-D-hMGzNH_zk8vVwg)
 * [Reddit](https://www.reddit.com/user/aarmea)
+* [Keybase](https://keybase.io/aarmea)
+* [LinkedIn](https://www.linkedin.com/in/aarmea/)
 
 ... or you can [send me an email](mailto:website@albertarmea.com).
 
