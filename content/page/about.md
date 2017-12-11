@@ -10,6 +10,7 @@ interesting (and occasionally unrelated) adventures that happen along the way.
 You can also find me on:
 
 * [GitHub](https://github.com/aarmea/)
+* [Thingiverse](https://www.thingiverse.com/aarmea/designs)
 * [YouTube](https://www.youtube.com/channel/UCnhhM5-D-hMGzNH_zk8vVwg)
 * [Reddit](https://www.reddit.com/user/aarmea)
 * [Keybase](https://keybase.io/aarmea)
