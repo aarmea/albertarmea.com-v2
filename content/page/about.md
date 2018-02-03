@@ -7,7 +7,7 @@ I make things -- usually software, but sometimes also hardware, videos, and
 music. On this site, I document the process of making these things and
 interesting (and occasionally unrelated) adventures that happen along the way.
 
-You can also find me on:
+You can [send me an email](mailto:website@albertarmea.com) or find me on:
 
 * [GitHub](https://github.com/aarmea/)
 * [Thingiverse](https://www.thingiverse.com/aarmea/designs)
@@ -15,8 +15,6 @@ You can also find me on:
 * [Reddit](https://www.reddit.com/user/aarmea)
 * [Keybase](https://keybase.io/aarmea)
 * [LinkedIn](https://www.linkedin.com/in/aarmea/)
-
-... or you can [send me an email](mailto:website@albertarmea.com).
 
 My resume can be found [here](/docs/resume.pdf).
 
