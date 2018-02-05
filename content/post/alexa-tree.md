@@ -314,7 +314,7 @@ ctl.!default {
 ```
 
 At this point, you should be able to reboot your Pi and once Alexa says "Hello",
-the tree will work as an echo (albeit poorly). If not, check the log via
+the tree will work as an Echo (albeit poorly). If not, check the log via
 `journalctl -u AlexaPi.service` to see what specifically went wrong. If you
 still need to set up the output device, I found the [Arch Wiki's documentation
 on PulseAudio][pulseaudio-output] useful.
@@ -343,7 +343,8 @@ triggers:
 ```
 
 To test these changes quickly, you can restart just the AlexaPi service without
-restarting the entire Pi with `sudo systemctl restart AlexaPi.service`.
+restarting the entire Pi with `sudo systemctl restart AlexaPi.service`. The
+wakeword will still be "Alexa", but it should be much more responsive.
 
 Given that I just stuffed Alexa into a Christmas tree, I figured an appropriate
 wake phrase would be "Oh Christmas tree". On [Snowboy's
@@ -357,14 +358,17 @@ model on [its page][christmastree-page].
 [christmastree-model]: /post/alexa-tree/Oh_Christmas_Tree.pmdl
 [christmastree-page]: https://snowboy.kitt.ai/hotword/14881
 
-Once you have a model, put it somewhere the alexapi account can access it and
-edit its configuration to use it:
+Once you have a model file, copy it to the Pi somewhere the alexapi account can
+access, like inside `/opt/AlexaPi`, using `scp` or a graphical tool like
+[FileZilla][filezilla]. Then, edit AlexaPi's configuration to use the model:
 
 ```yaml
 triggers:
   snowboy:
     model: "/opt/AlexaPi/Oh_Christmas_Tree.pmdl"
 ```
+
+[filezilla]: https://filezilla-project.org/
 
 Finally, set up the GPIO pins to the pins so that they match the the pins you
 chose earlier for the motors, lights, and button. To test the mouth motor, I
