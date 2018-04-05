@@ -99,12 +99,13 @@ Android provides a [`getAddress()`][btadapter-getaddress] on the `BluetoothAdapt
 * Marshmallow up to Oreo: [`getAddress()` always returns `02:00:00:00:00:00`][marshmallow-block-mac]. On these versions, Noise is able to [use reflection to retrieve the address][noise-mac-reflection].
 * Oreo and up: [using `getAddress()` requires the app to have the `LOCAL_MAC_ADDRESS` permission][oreo-block-mac], which is only granted to system apps or [via root][root-pm-grant]. Attempting to call it anyway will result in an uncatchable `SecurityException`. As a workaround, the MAC address is visible in Settings, so it can be manually pasted into the app's storage[^noise-oreo-mac].
 
-[^noise-oreo-mac]: This isn't implemented yet either, so for my testing I've been hardcoding my Pixel's MAC address for use if running on Oreo. I'm planning on adding this UI in the near future.
+[^noise-oreo-mac]: This wasn't implemented when I originally posted this, but the setting exists as of [this commit][noise-mac-setting].
 
 [marshmallow-block-mac]: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-hardware-id
 [oreo-block-mac]: https://www.xda-developers.com/android-o-introduces-changes-and-improvements-to-device-identifiers/
 [root-pm-grant]: https://github.com/aarmea/HandsfreeActions/blob/35b1e140098e2d5945042416a25bb0b590b2e468/HandsfreeActions/src/main/java/com/albertarmea/handsfreeactions/RemapperService.java#L73
 [noise-mac-reflection]: https://github.com/aarmea/noise/blob/8deb23b18b344e1392b08ae7c2db94b875e398e7/app/src/main/java/com/alternativeinfrastructures/noise/sync/bluetooth/BluetoothSyncService.java#L130
+[noise-mac-setting]: https://github.com/aarmea/noise/commit/17d37c380ec4f093821db421ab77d96fc5683667
 
 I recognize that Google is trying to improve privacy with this move -- in advertising, the MAC address is used to track users between device resets. Additionally, because the MAC address is included in the beacon, if an attacker manages to correlate an address to a person, that attacker can then determine if that person is nearby.
 
