@@ -1,7 +1,6 @@
 ---
 title: "Creating Bluetooth sockets on Android without pairing"
 date: 2018-03-26T02:41:36-07:00
-blogpost: true
 ---
 
 <video autoplay loop muted class="playpause-with-visibility">

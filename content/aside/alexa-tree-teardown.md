@@ -1,6 +1,7 @@
 ---
 title: "Animatronic tree teardown"
-blogpost: false
+hidden: true
+omitDate: true
 ---
 
 <!--more-->

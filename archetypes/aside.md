@@ -1,6 +1,7 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
-blogpost: false
+hidden: true
+omitDate: true
 draft: true
 ---
 

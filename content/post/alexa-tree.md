@@ -1,12 +1,9 @@
 ---
 title: "Making animatronics useful with Alexa"
 date: 2018-01-17T00:02:13Z
-blogpost: true
 ---
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/Yi8ShLDlquk?showinfo=0" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube id="Yi8ShLDlquk" >}}
 
 I was looking for a white elephant gift, and the silliness of this animatronic
 Christmas tree was too hard to pass up. The humor wore off after the third time

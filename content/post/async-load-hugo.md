@@ -1,7 +1,6 @@
 ---
 title: "Asynchronously loading pages in a Hugo site"
 date: 2017-08-30T23:39:16-07:00
-blogpost: true
 ---
 
 I wrote a Hugo "theme" that loads its pages asynchronously. Play with it

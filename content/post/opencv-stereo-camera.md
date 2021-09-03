@@ -1,7 +1,6 @@
 ---
 title: "Calculating a depth map from a stereo camera with OpenCV"
 date: 2017-10-01T20:49:33-07:00
-blogpost: true
 ---
 
 ![Potted plants and the corresponding depth map][depth-final]

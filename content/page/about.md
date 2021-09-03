@@ -1,6 +1,7 @@
 ---
 title: "About"
-blogpost: false
+omitDate: true
+hidden: true
 ---
 
 I make things -- usually software, but sometimes also hardware, videos, and
