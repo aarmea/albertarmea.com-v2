@@ -8,7 +8,7 @@ I wrote a Hugo "theme" that loads its pages asynchronously. Play with it
 [here](https://github.com/aarmea/mfw-singlepage/tree/e17c04d/).
 
 {{< rawhtml >}}
-  <video autoplay loop muted class="playpause-with-visibility">
+  <video autoplay playsinline loop muted class="playpause-with-visibility">
     <source src="/post/async-load-hugo/main.webm" type="video/webm">
     <source src="/post/async-load-hugo/main.mp4" type="video/mp4">
   </video>

@@ -4,7 +4,7 @@ date: 2018-03-26T02:41:36-07:00
 ---
 
 {{< rawhtml >}}
-  <video autoplay loop muted class="playpause-with-visibility">
+  <video autoplay playsinline loop muted class="playpause-with-visibility">
     <!--
       `ffmpeg -t 0:00:12 -i noise-demo-2018-03-24_15.55.55.mkv -r 10 noise-demo_%05d.png`
       Manually remove bad frames
