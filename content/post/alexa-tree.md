@@ -14,13 +14,15 @@ I heard it sing, so I decided to make it useful by adding Alexa.
 For context, the tree originally played a song, and motors in its mouth and body
 made it sing and dance to the music. This is all the tree was designed to do:
 
-<!-- ffmpeg -ss 00:00:01 -i VID_20171214_131516_2.mp4 -s 1280x720 -vframes 1 -q:v 5 VID_20171214_131516_2-web.jpg -->
-<video controls poster="/post/alexa-tree/original.jpg">
-  <!-- ffmpeg -ss 00:00:01 -i VID_20171214_131516_2.mp4 -s 1280x720 -c:v libvpx-vp9 -crf 42 -b:v 0 VID_20171214_131516_2-web.webm -->
-  <source src="/post/alexa-tree/original.webm" type="video/webm">
-  <!-- ffmpeg -ss 00:00:01 -i VID_20171214_131516_2.mp4 -s 1280x720 -c:v libx264 -crf 26 -b:v 0 VID_20171214_131516_2-web.mp4 -->
-  <source src="/post/alexa-tree/original.mp4" type="video/mp4">
-</video>
+{{< rawhtml >}}
+  <!-- ffmpeg -ss 00:00:01 -i VID_20171214_131516_2.mp4 -s 1280x720 -vframes 1 -q:v 5 VID_20171214_131516_2-web.jpg -->
+  <video controls poster="/post/alexa-tree/original.jpg">
+    <!-- ffmpeg -ss 00:00:01 -i VID_20171214_131516_2.mp4 -s 1280x720 -c:v libvpx-vp9 -crf 42 -b:v 0 VID_20171214_131516_2-web.webm -->
+    <source src="/post/alexa-tree/original.webm" type="video/webm">
+    <!-- ffmpeg -ss 00:00:01 -i VID_20171214_131516_2.mp4 -s 1280x720 -c:v libx264 -crf 26 -b:v 0 VID_20171214_131516_2-web.mp4 -->
+    <source src="/post/alexa-tree/original.mp4" type="video/mp4">
+  </video>
+{{< /rawhtml >}}
 
 The first step was to take the tree apart to see what components can be reused.
 Fortunately, this was relatively easy -- aside from the short section of fabric
@@ -378,9 +380,11 @@ My complete AlexaPi `config.yaml` is available [here][alexapi-config].
 
 [alexapi-config]: https://gist.github.com/aarmea/4f29cb7c4a46e6a1f936fe1950d7a87f
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/k3fyvoydrGU?showinfo=0" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< rawhtml >}}
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/k3fyvoydrGU?showinfo=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+{{< /rawhtml >}}
 
 ## Moving the mouth naturally
 
@@ -421,10 +425,12 @@ natural mouth movements.
 [gpio-library]: https://pypi.python.org/pypi/RPi.GPIO
 [mouth-script]: https://gist.github.com/aarmea/f3010fd58629acda9c458e883ee010b5
 
-<!-- ffmpeg -i VID_20180110_182049~2.mp4 -s 1280x720 -vframes 1 -q:v 5 VID_20180110_182049~2-web.jpg -->
-<video controls poster="/post/alexa-tree/moving-mouth.jpg">
-  <!-- ffmpeg -i VID_20180110_182049~2.mp4 -s 1280x720 -c:v libvpx-vp9 -crf 42 -b:v 0 VID_20180110_182049~2-web.webm -->
-  <source src="/post/alexa-tree/moving-mouth.webm" type="video/webm">
-  <!-- ffmpeg -i VID_20180110_182049~2.mp4 -s 1280x720 -c:v libx264 -crf 26 -b:v 0 VID_20180110_182049~2-web.mp4 -->
-  <source src="/post/alexa-tree/moving-mouth.mp4" type="video/mp4">
-</video>
+{{< rawhtml >}}
+  <!-- ffmpeg -i VID_20180110_182049~2.mp4 -s 1280x720 -vframes 1 -q:v 5 VID_20180110_182049~2-web.jpg -->
+  <video controls poster="/post/alexa-tree/moving-mouth.jpg">
+    <!-- ffmpeg -i VID_20180110_182049~2.mp4 -s 1280x720 -c:v libvpx-vp9 -crf 42 -b:v 0 VID_20180110_182049~2-web.webm -->
+    <source src="/post/alexa-tree/moving-mouth.webm" type="video/webm">
+    <!-- ffmpeg -i VID_20180110_182049~2.mp4 -s 1280x720 -c:v libx264 -crf 26 -b:v 0 VID_20180110_182049~2-web.mp4 -->
+    <source src="/post/alexa-tree/moving-mouth.mp4" type="video/mp4">
+  </video>
+{{< /rawhtml >}}

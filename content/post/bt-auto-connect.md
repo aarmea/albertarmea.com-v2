@@ -3,15 +3,17 @@ title: "Creating Bluetooth sockets on Android without pairing"
 date: 2018-03-26T02:41:36-07:00
 ---
 
-<video autoplay loop muted class="playpause-with-visibility">
-  <!--
-    `ffmpeg -t 0:00:12 -i noise-demo-2018-03-24_15.55.55.mkv -r 10 noise-demo_%05d.png`
-    Manually remove bad frames
-    `ffmpeg -framerate 10 -pattern_type glob -i "noise-demo_*.png" -pix_fmt yuv420p -c:v libx264 -crf 32 -b:v 0 -an noise-demo-web.mp4`
-  -->
-  <source src="/post/bt-auto-connect/noise-demo-web.mp4">
-  <!--No webm because it's always noticeably worse at this filesize?-->
-</video>
+{{< rawhtml >}}
+  <video autoplay loop muted class="playpause-with-visibility">
+    <!--
+      `ffmpeg -t 0:00:12 -i noise-demo-2018-03-24_15.55.55.mkv -r 10 noise-demo_%05d.png`
+      Manually remove bad frames
+      `ffmpeg -framerate 10 -pattern_type glob -i "noise-demo_*.png" -pix_fmt yuv420p -c:v libx264 -crf 32 -b:v 0 -an noise-demo-web.mp4`
+    -->
+    <source src="/post/bt-auto-connect/noise-demo-web.mp4">
+    <!--No webm because it's always noticeably worse at this filesize?-->
+  </video>
+{{< /rawhtml >}}
 
 I implemented a way to automatically create Bluetooth Classic sockets between two nearby Android devices running the same app. This method works continuously in the background without wakelocks, and it does not require pairing, root, or any user interaction.
 
