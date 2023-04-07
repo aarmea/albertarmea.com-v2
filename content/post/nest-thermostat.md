@@ -92,14 +92,14 @@ The quote the HVAC company gave for the parts alone for the new zone controller 
 
 ![Incorrect wiring of the old zone controller][old-zc-schematic-wrong]
 
-For reference, this is how everything *should* have been wired according to the [manual for the old zone controller (Mastertrol Mini-Zone)][old-zc-manual]:
-
-![Correct wiring of the old zone controller][old-zc-schematic-reference]
-
 Schematically, there's two problems here, both of which were caused by the work done by the HVAC company when they "fixed" our air conditioning:
 
 *   The system was "switched" to cooling by connecting an actual wire from O1 to R rather than by correctly wiring O and B from the thermostat to the zone controller. This made it impossible to switch to heating by using the switch on the thermostat.
 *   The dampers were hardwired open.
+
+For reference, this is how everything *should* have been wired according to the [manual for the old zone controller (Mastertrol Mini-Zone)][old-zc-manual]:
+
+![Correct wiring of the old zone controller][old-zc-schematic-reference]
 
 The only parts that didn't translate directly to the new zone controller were the dampers. After reading through the [manual for the dampers we had (Trol-A-Temp/Zone-A-Trol MST)][damper-manual], I determined that the zone controller should be treated as a 3 wire control panel for the purpose of wiring the dampers:
 
