@@ -25,7 +25,7 @@ The video[^scrcpy] is of two physical phones, in this case my Moto G4 Play (left
 
 [scrcpy-github]: https://github.com/Genymobile/scrcpy
 
-# Motivation
+## Motivation
 
 A while ago, I was thinking about how fragile the infrastructure supporting long-distance wireless communication is:
 
@@ -46,7 +46,7 @@ With these concerns in mind, I began working on [Noise][noise-github], a peer-to
 [noise-bt-impl]: https://github.com/aarmea/noise/blob/8deb23b18b344e1392b08ae7c2db94b875e398e7/app/src/main/java/com/alternativeinfrastructures/noise/sync/bluetooth/BluetoothSyncService.java
 [epidemic-routing]: http://issg.cs.duke.edu/epidemic/epidemic.pdf
 
-# Discovery using Bluetooth LE
+## Discovery using Bluetooth LE
 
 Like the name implies, Bluetooth Low Energy is a standard designed to reduce the power needed to transfer certain types of data. It does this using a broadcast model, where central devices listen for beacons from peripherals[^ble-gatt]. Android Lollipop and higher support BLE in both the [central][ble-central-android] and [peripheral][ble-peripheral-android] roles[^ble-tested]. By constantly advertising and scanning for a predefined beacon, an app can locate nearby running instances of itself.
 
@@ -76,7 +76,7 @@ Noise [retrieves `BluetoothLeAdvertiser` and `BluetoothLeScanner`][noise-btdevic
 [noise-discover-impl]: https://github.com/aarmea/noise/blob/8deb23b18b344e1392b08ae7c2db94b875e398e7/app/src/main/java/com/alternativeinfrastructures/noise/sync/bluetooth/BluetoothSyncService.java#L191
 [oreo-ble-sleep]: http://www.davidgyoungtech.com/2017/08/07/beacon-detection-with-android-8
 
-# Making the connection
+## Making the connection
 
 Android provides [`listenUsingInsecureRfcommWithServiceRecord`][socket-listen-android] and [`createInsecureRfcommSocketToServiceRecord`][socket-connect-android] to create unauthenticated connections without pairing as long as both the server and client agree on a UUID. For simplicity, I also used the beacon's service UUID to facilitate the connection.
 
@@ -90,7 +90,7 @@ After setting up BLE, Noise [listens for Bluetooth Classic connections in a sepa
 
 After these steps, each device has a socket connection to the other, and sync can proceed as defined by epidemic routing.
 
-# MAC address whack-a-mole
+## MAC address whack-a-mole
 
 Android provides a [`getAddress()`][btadapter-getaddress] on the `BluetoothAdapter` that originally retrieved the Bluetooth adapter's physical MAC address. However, Google has been making this more and more difficult:
 
@@ -112,7 +112,7 @@ I recognize that Google is trying to improve privacy with this move -- in advert
 
 Unfortunately, as far as I know this is the most accessible way to create sockets between two Android phones, so this hack will have to stay. Suggestions are welcome.
 
-# Permissions
+## Permissions
 
 As expected, this requires the `BLUETOOTH` and `BLUETOOTH_ADMIN` permissions. On Marshmallow and up, starting a BLE scan requires the `ACCESS_COARSE_LOCATION` permission (presumably because an app can determine where it is if a unique beacon is nearby). [Noise's AndroidManifest.xml][noise-manifest] also has `LOCAL_MAC_ADDRESS` in the unlikely event that it is installed as a system app.
 

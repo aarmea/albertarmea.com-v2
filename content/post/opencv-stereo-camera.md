@@ -29,9 +29,9 @@ cameras at a good resolution simultaneously. I suspected these issues were the
 result of a lack of documentation and user error, so I risked the purchase
 anyway.
 
-# Getting synchronized, full-resolution images
+## Getting synchronized, full-resolution images
 
-## Getting an image
+### Getting an image
 
 After receiving the camera, my first step was to get images of any kind from it.
 First, I installed Python, OpenCV, and the OpenCV-Python bindings, then I
@@ -88,7 +88,7 @@ use one VideoCapture instance and pass in whether you want the 0th or 1st camera
 in retrieve(). You might need to change the values passed into VideoCapture to 1
 and 2 if camera 0 is your computer's built in webcam.
 
-## Increasing the resolution
+### Increasing the resolution
 
 By default, the ELP cameras output video at 640x480. I didn't think I would be
 able to get a good depth map from that resolution, so my next step was to try to
@@ -180,14 +180,14 @@ both don't fit on my screen):
 
 [stereo-full]: /post/opencv-stereo-camera/stereo-full.jpg
 
-# Calibrating the cameras
+## Calibrating the cameras
 
 Stereo correspondence algorithms rely on undistorted and rectified source
 images. Specifically, straight lines in the real world need to be straight in
 the images, and the images need to be aligned with each other. Out of the box,
 the ELP camera has plenty of distortion which I fixed by calibrating it.
 
-## Capturing calibration data
+### Capturing calibration data
 
 Before calibrating, I needed to get some calibration data. I printed out a
 chessboard, taped it to a clipboard, and added this to the code above to save
@@ -217,7 +217,7 @@ corners are visible.
 
 [my-chessboard]: /post/opencv-stereo-camera/chessboard.html
 
-## Calibrating the cameras individually
+### Calibrating the cameras individually
 
 OpenCV has a [pretty good tutorial][opencv-calibration-single] on calibrating a
 single camera. The gist of it is to extract the locations of the corners from
@@ -299,7 +299,7 @@ recalibrating, I was able to get good results with straight lines:
 
 [calibrated-good]: /post/opencv-stereo-camera/calibrated-good.jpg
 
-## Calibrating the cameras together and rectifying
+### Calibrating the cameras together and rectifying
 
 The next step to correct a stereo pair is to determine the rotation and vertical
 offset between the two cameras using
@@ -354,7 +354,7 @@ result in camera differences.
 
 [my-calibration]: /post/opencv-stereo-camera/calibration.npz
 
-# Calculating a depth map
+## Calculating a depth map
 
 Now that the cameras are fully calibrated and rectified, they can be used to
 generate depth maps. First, load the calibration:

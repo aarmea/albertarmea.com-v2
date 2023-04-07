@@ -23,7 +23,7 @@ Based on this alone, I was convinced that new thermostats would be a drop-in rep
 
 [tc-thermostat-video]: https://youtu.be/ZZC0SP02PqY?t=28
 
-# Disclaimers
+## Disclaimers
 
 Yes, I know home improvement is a little off topic here -- I originally wrote this for a different blog I am no longer involved with. I promise there's interesting electronics-adjacent content.
 
@@ -31,7 +31,7 @@ There's *a lot* of Amazon affiliate links here. While I appreciate your support,
 
 HVAC work is high-voltage electrical work. This is dangerous: mistakes can be both costly and life-threatening. You should only attempt this if you understand and take responsibility for the risks involved.
 
-# Choosing a thermostat
+## Choosing a thermostat
 
 First, some context. The house has forced-air heating and central air conditioning split into two zones, and came with basic programmable thermostats for each zone. I had a few goals for the replacement thermostats:
 
@@ -52,7 +52,7 @@ There's a few different options for smart thermostats these days, and most of th
 [ecobee-premium]: https://www.amazon.com/ecobee-Thermostat-Premium-Quality-Monitor/dp/B09XXS48P8?\&linkCode=ll1\&tag=albertarmeabl-20\&linkId=68100ff9187e9a1c66a62bf2a9cc458e\&language=en_US\&ref_=as_li_ss_tl
 [ecobee-enhanced]: https://www.amazon.com/ecobee-Smart-Thermostat-Enhanced-works/dp/B09XXTQPXC?\&linkCode=ll1\&tag=albertarmeabl-20\&linkId=411ce9e6cd389be8598c24a8d90d1f4e\&language=en_US\&ref_=as_li_ss_tl
 
-# Safety
+## Safety
 
 Before you get started, remember that the wiring you'll run into could be up to 240V on a 60A breaker, which can easily kill you if you're not careful. Make sure you understand how to keep yourself safe while working with electrical connections. While I won't go into too much detail here, the most important thing is to always turn off a circuit at the breaker box and test the wires you're working on before touching them. You'll need some tools to be 100% sure:
 
@@ -64,7 +64,7 @@ Before you get started, remember that the wiring you'll run into could be up to 
 [voltage-tester]: https://www.amazon.com/Klein-Tools-NCVT3P-Flashlight-Protection/dp/B08DQMX7YF?keywords=non+contact+voltage+tester\&qid=1680709916\&sprefix=non+contact%2Caps%2C98\&sr=8-6\&linkCode=ll1\&tag=albertarmeabl-20\&linkId=ecfddadc47ba60cba8890919ff8636be\&language=en_US\&ref_=as_li_ss_tl
 [circuit-breaker-finder]: https://www.amazon.com/Klein-Tools-ET450-Energized-Non-Energized/dp/B09XG38XLP?crid=3I9I0OWQJCBZW\&keywords=circuit+breaker+finder+240v\&qid=1680713761\&sprefix=circuit+breaker+finder+240v%2Caps%2C124\&sr=8-8\&ufe=app_do%3Aamzn1.fos.f5122f16-c3e8-4386-bf32-63e904010ad0\&linkCode=ll1\&tag=albertarmeabl-20\&linkId=7498dff5674dfcc6ee60764583eaf8cc\&language=en_US\&ref_=as_li_ss_tl
 
-# False start
+## False start
 
 I first got started with the installation in October 2021. By then, the thermostats had already sitting on the shelf for four months. I started with the downstairs zone and naively followed the instructions included in the Nest app, which told me to reuse the wiring for the thermostat as-is. The previous homeowners seem to have chosen strange colors for the wires:
 
@@ -86,7 +86,7 @@ The following October, it was time to turn the heat on again. I flipped the phys
 [new-thermostat-downstairs-wiring-first]: new-thermostat-downstairs-wiring-first.jpg
 [old-zc-after-rework]: old-zc-after-rework.jpg
 
-# Planning
+## Planning
 
 The quote the HVAC company gave for the parts alone for the new zone controller felt absurd to me. I couldn't leave my family without heat, so I ordered the [Ecojay SmartZone-4X][zone-controller] for a fifth of the price and began the painstaking process of manually tracing all of the wiring between the zone controller, furnace, condenser, fan, thermostats, and dampers. I mostly did this by checking voltage levels between each of the wires, which luckily were distinct enough to figure out where each of them led. Maybe this would have been easier if I had just bitten the bullet and bought the [circuit breaker finder][circuit-breaker-finder] I linked above.
 
@@ -115,7 +115,7 @@ I also had to add a (fortunately very short) C wire between the furnace and the 
 [damper-schematic]: damper-schematic.png
 [nest-power-connector]: https://www.amazon.com/Google-Nest-Power-Connector-Accessories/dp/B093TRFQWP?\&linkCode=ll1\&tag=albertarmeabl-20\&linkId=50d028f4a7b7b12f5f32327c858c20f2\&language=en_US\&ref_=as_li_ss_tl
 
-# Installation
+## Installation
 
 Now it was time to actually replace the zone controller. The screws attaching the zone controller to the duct work were inaccessible, so I ended up literally cutting up the PCB with an [oscillating multi-tool][oscillating-multi-tool] to get to them. (I intentionally didn't cut any traces just in case I needed it again for some reason.)
 
@@ -143,7 +143,7 @@ After some probing with the multimeter, I discovered that the transformer that w
 [new-zc-wiring]: new-zc-wiring.jpg
 [new-zc-manual]: new-zc-manual.pdf
 
-# Cleanup
+## Cleanup
 
 While I was testing the system to make sure that both heating and cooling worked properly, I felt a noticeable draft from a few spots around the ducts. I taped the worst offenders and altogether this seems to have brought down the gas and electric bills considerably. A [thermal camera][thermal-camera] may be useful to identify more subtle leaks.
 

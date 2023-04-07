@@ -16,7 +16,7 @@ I wrote a Hugo "theme" that loads its pages asynchronously. Play with it
 
 <!--more-->
 
-# Using Hugo for a podcast site
+## Using Hugo for a podcast site
 
 A few weeks ago, one of my friends asked me to help with the website for a
 podcast he was starting. Two of our requirements were that it needed to be a
@@ -42,13 +42,13 @@ the podcast, click around in the site. This will not stop playback -- internal
 links load asynchronously and external links load in a new tab. With JavaScript
 disabled, you will at least be able to read the text content of the site.
 
-# Pardon the dust
+## Pardon the dust
 
 The code here is the *absolute minimum* needed to implement this functionality,
 so I'm intentionally ignoring some best practices: there's no CSS at all and the
 JavaScript is defined inline, among others.
 
-# Writing a Hugo theme
+## Writing a Hugo theme
 
 [Hugo's documentation on creating a theme](https://gohugo.io/themes/creating/)
 tells you to run `hugo new theme [name]`, which is supposed to generate a
@@ -103,12 +103,12 @@ When writing the theme, I also referenced the source of the [After
 Dark](https://comfusion.github.io/after-dark/) and
 [hugo-xmin](https://github.com/yihui/hugo-xmin) themes as examples.
 
-# Loading pages asynchronously
+## Loading pages asynchronously
 
 Loading the site's pages is done in a few steps: override the link action,
 retrieve and display the content, and update the back stack and displayed URL.
 
-## Override the link click action
+### Override the link click action
 
 The easiest way to do this is to register a click handler on the `<body>` and do
 nothing if the click event was not on a link:
@@ -153,7 +153,7 @@ anyway](http://mdn.beonex.com/en/DOM/window.onload.html). Alternately, I could
 have just given the click handler a name and set it directly on the `<body
 onclick="...">`.
 
-## Retrieve and display the new content
+### Retrieve and display the new content
 
 `loadPage()` does the AJAX call needed to get the new content. Using a raw
 [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
@@ -201,7 +201,7 @@ If Internet Explorer support is not a concern to you, you could consider using
 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) instead of
 XMLHttpRequest.
 
-## Update the back stack
+### Update the back stack
 
 At this point, the site works and you can freely browse without interrupting
 media playback, but the back and forward buttons don't do what you'd expect them
@@ -238,7 +238,7 @@ window.onpopstate = function(event) {
 I could probably save bandwidth that will be wasted when the same page is loaded
 more than once by caching the content.
 
-# Saying no to jQuery
+## Saying no to jQuery
 
 I originally avoided jQuery for this prototype as a learning exercise, but in
 hindsight using it would not have helped much.

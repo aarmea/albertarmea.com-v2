@@ -19,7 +19,7 @@ You can [send me an email](mailto:website@albertarmea.com) or find me on:
 
 My resume can be found [here](/docs/resume.pdf).
 
-# Site
+## Site
 
 This site is generated with [Hugo](https://gohugo.io) using [a modified version
 of the Minos theme](https://github.com/aarmea/hugo-theme-minos) and hosted by
@@ -31,7 +31,7 @@ The [previous home page](http://albertarmea.com/static) and the [previous
 blog](http://blog.albertarmea.com) are still available at their original
 locations.
 
-# Legal
+## Legal
 
 Unless specified otherwise, the content on this site is made available under the
 [Creative Commons Attribution 4.0

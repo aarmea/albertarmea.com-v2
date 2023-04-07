@@ -31,7 +31,7 @@ components were held in place with screws.
 
 [See here for a full teardown.](/aside/alexa-tree-teardown)
 
-# Building new hardware
+## Building new hardware
 
 Once I had the tree's electronics enclosure out, I could start picking parts and
 building hardware to replace its original circuits.
@@ -39,7 +39,7 @@ building hardware to replace its original circuits.
 <!-- convert -strip -resize 1600 -interlace Plane -quality 70 IMG_20171214_135942.jpg IMG_20171214_135942-web.jpg -->
 ![Tree's electronics assembly after removal](/post/alexa-tree/assembly.jpg)
 
-## Choosing parts
+### Choosing parts
 
 I had two main constraints for parts: they had to fit inside the enclosure for
 neatness, and I needed to be able to buy the parts in person to finish it on
@@ -88,7 +88,7 @@ Here's what I ended up using:
 [kapton]: https://vetco.net/products/kapton-tape-18mm-wide-x-30-meters-long
 [mintyboost]: https://www.adafruit.com/product/14
 
-## Prototyping on a breadboard
+### Prototyping on a breadboard
 
 With the parts picked out, I needed to test the components on a breadboard.
 First, I removed the plastic case from the audio adapter using a spudger and
@@ -122,7 +122,7 @@ Pi GPIO [pinout][pi-pinout] when choosing pins.
 
 [pi-pinout]: https://pinout.xyz/
 
-## Final assembly
+### Final assembly
 
 Since I planned to make only one of these trees, I soldered the two circuits
 directly to a piece of perfboard. While this meant I didn't have to design and
@@ -170,9 +170,9 @@ power input. Then I wrote down the GPIO pins the motors, button, and LEDs were
 connected to, and re-assembly was just the disassembly in reverse. I drilled a
 small hole in the battery cover for the USB cable before screwing it back on.
 
-# Setting up Alexa
+## Setting up Alexa
 
-## Raspbian and access via local network
+### Raspbian and access via local network
 
 The Raspberry Pi is stuck inside the tree with no way to display anything, so a
 graphical interface would just be bloat. As a result, I used the [Raspbian
@@ -244,7 +244,7 @@ I also recommend these other steps for security hygiene:
 [fail2ban]: https://packages.debian.org/jessie/fail2ban
 [auto-update]: https://wiki.debian.org/UnattendedUpgrades
 
-## AlexaPi for Alexa
+### AlexaPi for Alexa
 
 I decided to use [AlexaPi][alexapi] to actually call the Alexa Voice Service
 instead of [Amazon's reference app][alexa-sample] because AlexaPi lets you
@@ -386,7 +386,7 @@ My complete AlexaPi `config.yaml` is available [here][alexapi-config].
   </div>
 {{< /rawhtml >}}
 
-## Moving the mouth naturally
+### Moving the mouth naturally
 
 AlexaPi does not support animatronic mouth movements out of the box, so I
 researched how similar projects achieved mouth movements:
