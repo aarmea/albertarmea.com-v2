@@ -56,7 +56,7 @@ To do this, first solder wires onto the GND and XVS pads on the camera module:[^
 
 ![Location of the XVS and GND pads on the official Raspberry Pi HQ camera module][pi-hq-xvs-pads]
 
-XVS is at a 1.8v logic level, and the Pi's GPIO pins are at a 3.3v logic level. You can use an off-the-shelf level shifter, like [this one from SparkFun][level-shifter-buy][^bidirectional-level-shifter] along with some resistors to create a voltage divider for the 1.8v reference voltage on the LV pin.[^pi-hq-xvs-attribution]
+XVS is at a 1.8v logic level, and the Pi's GPIO pins are at a 3.3v logic level. You can use an off-the-shelf level shifter[^bidirectional-level-shifter], like [this one from SparkFun][level-shifter-buy] or a [dupe of it on Amazon][level-shifter-dupe], along with some resistors to create a voltage divider for the 1.8v reference voltage on the LV pin.[^pi-hq-xvs-attribution]
 
 ![Level shifter circuit between XVS at 1.8v and Pi GPIO at 3.3v][pi-hq-xvs-shifter]
 
@@ -71,6 +71,7 @@ As pictured, the camera's XVS and GND go to LV3 and a common GND. HV goes to one
 [454-license]: https://454.bio/docs/contribution-guidelines/
 [pi-hq-xvs-shifter]: /post/pi-cam-exposure/pi-hq-xvs-shifter.jpg
 [level-shifter-buy]: https://www.sparkfun.com/products/12009
+[level-shifter-dupe]: https://amzn.to/483u0RN
 
 ## Configuration
 
