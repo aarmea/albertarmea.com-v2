@@ -1,6 +1,7 @@
 ---
 title: "It took me a year to install new thermostats"
 date: 2023-04-06T02:41:36-04:00
+blogpost: true
 ---
 
 ![Nest thermostat and zone controller][cover]

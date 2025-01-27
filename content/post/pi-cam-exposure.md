@@ -1,6 +1,7 @@
 ---
 title: "Synchronizing hardware with Raspberry Pi camera exposures"
 date: 2024-01-29
+blogpost: true
 ---
 
 ![Screenshot of 454 TIRF UI, showing controls, protocol, and microscope image. Microscope image contains DNA clusters.][454-screenshot]

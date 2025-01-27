@@ -1,6 +1,7 @@
 ---
 title: "Making animatronics useful with Alexa"
 date: 2018-01-17T00:02:13Z
+blogpost: true
 ---
 
 {{< youtube id="Yi8ShLDlquk" >}}

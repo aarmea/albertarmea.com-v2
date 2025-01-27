@@ -1,6 +1,7 @@
 ---
 title: "Cross-compiling for Raspberry Pi on an Apple silicon Mac"
 date: 2024-03-02
+blogpost: true
 ---
 
 While developing the [device software][454-sw] for [454 Bio][454]'s DNA sequencer, I needed to be able to build [rpicam-apps][rpicam-apps] and our [HAL][454-hal]. While I could compile directly on the Pi 4 it was running on, it was quite slow:
