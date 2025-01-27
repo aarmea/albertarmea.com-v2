@@ -11,10 +11,9 @@ interesting (and occasionally unrelated) adventures that happen along the way.
 You can [send me an email](mailto:website@albertarmea.com) or find me on:
 
 * [GitHub](https://github.com/aarmea/)
+* [Prusa Printables](https://www.printables.com/@aarmea_2679826)
 * [Thingiverse](https://www.thingiverse.com/aarmea/designs)
 * [YouTube](https://www.youtube.com/channel/UCnhhM5-D-hMGzNH_zk8vVwg)
-* [Reddit](https://www.reddit.com/user/aarmea)
-* [Keybase](https://keybase.io/aarmea)
 * [LinkedIn](https://www.linkedin.com/in/aarmea/)
 
 My resume can be found [here](/docs/resume.pdf).
